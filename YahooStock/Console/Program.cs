@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Analytics;
 
 
 
@@ -11,27 +12,54 @@ namespace ConsoleApp
 
     class Program
     {
-        private const bool DEMO_MODE = true;
+        private const bool DEMO_MODE = false;
 
         static void Main(string[] args)
         {
             writeIntroToConsole();
-            if (DEMO_MODE)
+
+            try
             {
-                demoMain();
+                if (DEMO_MODE)
+                {
+                    demoMain();
+                }
+                else
+                {
+                    stockMain();
+                }
             }
-            else
+            catch(Exception e)
             {
-                stockMain();
+                Console.WriteLine("Adios!");
             }
-            
 
 
         }
 
         static void stockMain()
         {
-            Console.WriteLine("Please Enter Stock Symbol...");
+            string line = "";
+            string quote;
+
+            Console.WriteLine("Please Enter Stock Symbol. Type '+' to end Program.");
+            Console.Write("Stock Symbol: ");
+            line = Console.ReadLine();
+
+            while (line != "+")
+            {
+
+                quote = StockReporting.GetQuoteLatest(line);
+
+                Console.WriteLine();
+                Console.WriteLine();
+
+                Console.WriteLine("Latest Data: ");
+                Console.WriteLine(quote);
+                Console.WriteLine("Please Enter Stock Symbol. Type '+' to end Program.");
+                Console.Write("Stock Symbol: ");
+                line = Console.ReadLine();
+            }
         }
 
 

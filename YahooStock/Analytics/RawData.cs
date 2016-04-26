@@ -20,7 +20,7 @@ namespace Analytics
             GetQuoteLatest(Name, ref Price, ref Delta, ref sTime, ref sDate);
         }
 
-        private static string GetQuoteLatest(string pstrSymbol)
+        public static string GetQuoteLatest(string pstrSymbol)
         {
             string strURL = null;
             string strBuffer = null;
@@ -30,6 +30,7 @@ namespace Analytics
 
             strBuffer = RequestWebData(strURL);
 
+            return strBuffer;
             //Loop through the lines returned and transform it to a XML string
             System.Text.StringBuilder strReturn = new System.Text.StringBuilder();
             //  strReturn.Append("<StockQuoteLatest>" & Environment.NewLine)
