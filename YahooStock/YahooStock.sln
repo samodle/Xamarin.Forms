@@ -15,9 +15,11 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "StockQuotes", "StockQuotes\
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		StockQuotes\StockQuotes\StockQuotes.projitems*{82856cbb-b19f-4ce0-927b-b746a747792d}*SharedItemsImports = 4
 		Analytics\Analytics.projitems*{ee02a885-91c3-4b32-9fba-ecd22e12f921}*SharedItemsImports = 13
 		StockQuotes\StockQuotes\StockQuotes.projitems*{0ed5d2c5-2e29-4652-a0a4-8a272fc22d57}*SharedItemsImports = 13
 		Analytics\Analytics.projitems*{f87645fd-3d07-46a7-b512-21832f1f154a}*SharedItemsImports = 4
+		StockQuotes\StockQuotes\StockQuotes.projitems*{cb0aa0b8-037d-4aef-96fa-f45f3e80b75e}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
