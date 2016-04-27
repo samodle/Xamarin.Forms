@@ -36,10 +36,12 @@ namespace ConsoleApp
 
 
         }
-
-        static void stockMain()
+         
+        async static void stockMain()
         {
             string line = "";
+            List<string> stockSymbols;
+          //  Task<string> quoteTask; 
             string quote;
 
             Console.WriteLine("Please Enter Stock Symbol. Type '+' to end Program.");
@@ -49,12 +51,15 @@ namespace ConsoleApp
             while (line != "+")
             {
 
-                quote = StockReporting.GetQuoteLatest(line);
+                stockSymbols = StringHelper.splitAtCommas(line);
+                quote = await StockReporting.GetQuoteLatest(line);
 
                 Console.WriteLine();
                 Console.WriteLine();
 
                 Console.WriteLine("Latest Data: ");
+
+               // quote = await quoteTask;
                 Console.WriteLine(quote);
                 Console.WriteLine("Please Enter Stock Symbol. Type '+' to end Program.");
                 Console.Write("Stock Symbol: ");

@@ -10,5 +10,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)RawData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StringTools.cs" />
   </ItemGroup>
 </Project>

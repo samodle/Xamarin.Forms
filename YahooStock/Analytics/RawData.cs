@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 using System.Net;
 using System.IO;
-
+using System.Threading.Tasks;
 
 namespace Analytics
 {
@@ -20,7 +20,7 @@ namespace Analytics
             GetQuoteLatest(Name, ref Price, ref Delta, ref sTime, ref sDate);
         }
 
-        public static string GetQuoteLatest(string pstrSymbol)
+        public async static Task<string> GetQuoteLatest(string pstrSymbol)
         {
             string strURL = null;
             string strBuffer = null;
