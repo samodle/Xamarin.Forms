@@ -9,7 +9,11 @@
     </Grid.RowDefinitions>
     <ScrollView>
       <StackLayout >
-        <Entry x:Name="quoteBox" Text="enter quote" />
+        <Entry x:Name="quoteBox" Placeholder="Enter Stock Symbol">
+       <!--   <Entry.Triggers>
+            <Setter Property="Scale" Value ="1.3" />
+          </Entry.Triggers> -->
+        </Entry>
         <Button x:Name="goButton" Text="Pull Quote" />
       </StackLayout>
     </ScrollView>

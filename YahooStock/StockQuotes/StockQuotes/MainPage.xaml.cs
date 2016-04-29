@@ -17,24 +17,28 @@ namespace StockQuotes
             goButton.Clicked += GetQuoteButtonClicked;
 		}
 
-
         async void GetQuoteButtonClicked(object sender, EventArgs e)
         {
+            string q = "?";
+            string  line = quoteBox.Text;
 
-            string line = "";
-            List<string> stockSymbols;
-            //  Task<string> quoteTask; 
-            string quote;
+            goButton.AnchorY = 0.1;
 
- 
-            line = quoteBox.Text;//THIS NEEDS TO BE TEXTBOX INPUT Console.ReadLine();
+            Task<string> getStringTask = updateStatusLabel(line); //.ConfigureAwait(false);
 
+            goButton.RelRotateTo(180, 1000);
 
-                stockSymbols = StringHelper.splitAtCommas(line);
-                quote = await StockReporting.GetQuoteLatest(line);
+            q = await getStringTask;
+            statusText.Text = q;
 
-            statusText.Text = quote;
-            }
+        }
+
+        async Task<string> updateStatusLabel(string Ticker)
+        {
+            string quote = await StockReporting.GetQuoteLatest(Ticker);
+            return quote;
+           // Device.BeginInvokeOnMainThread(() => statusText.Text = quote);           
+        }
 
 
     }
