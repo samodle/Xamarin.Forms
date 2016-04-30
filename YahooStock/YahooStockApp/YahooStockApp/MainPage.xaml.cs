@@ -31,6 +31,8 @@ namespace YahooStockApp
             q = await getStringTask;
             statusText.Text = q;
 
+            goButton.AnchorY = 0.1;
+            await goButton.RelRotateTo(180, 1000);
         }
 
         async Task<string> updateStatusLabel(string Ticker)
