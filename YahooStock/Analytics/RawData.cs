@@ -1,9 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
+﻿using System;
 
 using System.Net;
 using System.IO;
@@ -15,11 +10,7 @@ namespace Analytics
     public static class StockReporting
     {
 
-        public static void STOCK_ShowMeTheMoney(string Name, string Price, string Delta, string sTime, string sDate)
-        {
-            GetQuoteLatest(Name, ref Price, ref Delta, ref sTime, ref sDate);
-        }
-
+  
         public async static Task<string> GetQuoteLatest(string pstrSymbol)
         {
             string strURL = null;
@@ -32,7 +23,7 @@ namespace Analytics
 
             return strBuffer;
             //Loop through the lines returned and transform it to a XML string
-            System.Text.StringBuilder strReturn = new System.Text.StringBuilder();
+            var strReturn = new System.Text.StringBuilder();
             //  strReturn.Append("<StockQuoteLatest>" & Environment.NewLine)
 
 
@@ -94,7 +85,7 @@ namespace Analytics
         private static string TransformLatestLine(string pstrLine, ref string Price, ref string Delta, ref string sDate, ref string sTime)
         {
             string[] arrLine = null;
-            System.Text.StringBuilder strXML = new System.Text.StringBuilder();
+            var strXML = new System.Text.StringBuilder();
 
             arrLine = pstrLine.Split(',');
 
@@ -106,7 +97,7 @@ namespace Analytics
                 sTime = arrLine[3]; //C# removal    .Replace((char)34, "");
                 sDate = arrLine[2]; //C# removal   .Replace((char)34, "");
             }
-            catch (Exception ex)
+            catch 
             {
                 //oops...no internet?
             }

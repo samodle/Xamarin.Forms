@@ -12,7 +12,7 @@ namespace StockQuotes
 
             public App()
             {
-                MainPage = new MainPage();
+                MainPage = new Page();
             }
 
   

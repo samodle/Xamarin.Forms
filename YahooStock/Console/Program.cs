@@ -29,7 +29,7 @@ namespace ConsoleApp
                     stockMain();
                 }
             }
-            catch(Exception e)
+            catch
             {
                 Console.WriteLine("Adios!");
             }
