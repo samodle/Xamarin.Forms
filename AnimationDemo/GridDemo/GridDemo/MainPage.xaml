@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:A="clr-namespace:GridDemo"
+             x:Class="GridDemo.MainPage">
+  <StackLayout>
+  <Grid>
+    <!-- Resource Dictionary // Defining Styles For Elements Defined Below-->
+    <Grid.Resources>
+      <ResourceDictionary>
+        <GridLength x:Key="dividerThickness">2</GridLength>
+
+        <Style TargetType="BoxView">
+          <Setter Property="Color" Value="Accent" />
+        </Style>
+      </ResourceDictionary>
+    </Grid.Resources>
+    
+    <Grid.RowDefinitions>
+      <RowDefinition Height="{StaticResource dividerThickness}"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="{StaticResource dividerThickness}"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="{StaticResource dividerThickness}"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="{StaticResource dividerThickness}"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="{StaticResource dividerThickness}"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="{StaticResource dividerThickness}"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="{StaticResource dividerThickness}"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="{StaticResource dividerThickness}"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="{StaticResource dividerThickness}"/>
+    </Grid.ColumnDefinitions>
+
+    <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" />
+    <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="7" />
+    <BoxView Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" />
+    <BoxView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" />
+    <BoxView Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" />
+
+    <BoxView Grid.Row="0" Grid.Column="0" Grid.RowSpan="9" />
+    <BoxView Grid.Row="0" Grid.Column="2" Grid.RowSpan="9" />
+    <BoxView Grid.Row="0" Grid.Column="4" Grid.RowSpan="9" />
+    <BoxView Grid.Row="0" Grid.Column="6" Grid.RowSpan="9" />
+
+    <Label Text="Grid"
+           Grid.Row="1" Grid.Column="1"/>
+    
+  </Grid>
+    <Button x:Name="GoButton" Text="Go!" />
+    <Button x:Name="StopButton" Text="Stop" />
+  </StackLayout>
+</ContentPage>
