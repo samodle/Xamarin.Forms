@@ -4,7 +4,7 @@
               xmlns:A="clr-namespace:GridDemo"
              x:Class="GridDemo.MainPage">
   <StackLayout>
-  <Grid>
+  <Grid x:Name="MainGrid">
     <!-- Resource Dictionary // Defining Styles For Elements Defined Below-->
     <Grid.Resources>
       <ResourceDictionary>
@@ -48,8 +48,8 @@
     <BoxView Grid.Row="0" Grid.Column="4" Grid.RowSpan="9" />
     <BoxView Grid.Row="0" Grid.Column="6" Grid.RowSpan="9" />
 
-    <Label Text="Grid"
-           Grid.Row="1" Grid.Column="1"/>
+    <Label x:Name="Label1" Text="Grid"
+           Grid.Row="{Binding LabelRow}" Grid.Column="1"/>
     
   </Grid>
     <Button x:Name="GoButton" Text="Go!" />
